@@ -1,29 +1,49 @@
 
-## 🖼️ Image Enhancer App  
+# 🖼️ Image Enhancer App  
 
-This Streamlit app allows users to:  
-- Upload an image (`.jpg` or `.jpeg`).  
-- Resize the image to custom dimensions.  
-- Apply **enhancements** such as sharpening, brightness adjustment, and contrast improvement.  
-- Compare the **original vs enhanced image side by side**.  
-- Download the enhanced image in `.jpeg` format.  
+A simple and interactive **Streamlit web application** that lets you upload, resize, and enhance images with ease.  
 
 ---
 
-## 🚀 Features  
-✅ Upload an image  
-✅ Resize with **LANCZOS interpolation** for better quality  
-✅ Apply **sharpening, brightness, and contrast enhancement**  
-✅ Side-by-side comparison of Original vs Enhanced  
-✅ Download the enhanced image in `.jpeg` format  
+## ✨ What this app does
+- 📤 Upload an image (`.jpg`, `.jpeg`)  
+- 📏 Resize to custom width and height  
+- 🔧 Enhance using:
+  - Sharpening  
+  - Brightness adjustment  
+  - Contrast improvement  
+- 🖥️ View **Original vs Enhanced** side by side  
+- 💾 Download the enhanced image in `.jpeg` format  
 
 ---
 
-## 🖼️ Example Workflow  
+## 🚀 Features
+- Easy-to-use **Streamlit interface**  
+- High-quality resizing with **LANCZOS filter**  
+- Built-in **image enhancement controls**  
+- Side-by-side comparison for better visualization  
+- One-click **download button**  
 
+---
+
+## 🔄 Workflow
 1. Upload an image  
-2. Enter desired **width and height**  
-3. Click **"Show Image"**  
-4. Compare Original vs Enhanced (side by side)  
-5. Click **"Download Enhanced Image"** to save  
+2. Enter custom **width and height**  
+3. Click **Show Image**  
+4. Instantly compare **Original vs Enhanced**  
+5. Download your processed image  
 
+---
+
+## 📸 Example Preview  
+
+| Original Image | Enhanced Image |
+|----------------|----------------|
+| ![original](docs/original.jpg) | ![enhanced](docs/enhanced.jpg) |
+
+---
+
+## 📜 License  
+Licensed under the **MIT License**.  
+
+---
