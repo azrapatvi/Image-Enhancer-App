@@ -1,5 +1,4 @@
 import streamlit as st
-import cv2
 import numpy as np
 from PIL import Image,ImageEnhance
 import numpy as np
@@ -50,4 +49,5 @@ if st.button("show image"):
             file_name="enhanced_image.jpeg",
             mime="type/jpeg"
         )
+
 
