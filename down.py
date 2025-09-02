@@ -40,7 +40,7 @@ if st.button("show image"):
         st.image(contrast, caption="Enhanced", use_container_width=True)
 
         buffer=BytesIO()
-        img_resize.save(buffer,format="JPEG")
+        contrast.save(buffer,format="JPEG")
         buffer.seek(0)
 
         st.download_button(
@@ -49,5 +49,6 @@ if st.button("show image"):
             file_name="enhanced_image.jpeg",
             mime="type/jpeg"
         )
+
 
 
