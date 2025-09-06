@@ -182,28 +182,29 @@ elif option=='✂️ Crop Image':
         extension=os.path.splitext(filename)[1].lower()
     
 
-    if file:
-        img = Image.open(file)
-        
-        # Interactive cropper
-        st.write("Drag and select the part of the image you want to keep.")
-        cropped_img = st_cropper(
-            img,
-            realtime_update=True,   # updates crop in real-time
-            box_color='blue',       # crop box color
-            aspect_ratio=None       # None means free selection
-        )
+    with st.container(border=True):
+        if file:
+            img = Image.open(file)
+            
+            # Interactive cropper
+            st.write("Drag and select the part of the image you want to keep.")
+            cropped_img = st_cropper(
+                img,
+                realtime_update=True,   # updates crop in real-time
+                box_color='blue',       # crop box color
+                aspect_ratio=None       # None means free selection
+            )
 
-        # Show cropped image
-        st.image(cropped_img, caption="Cropped Image", use_container_width=True)
+            # Show cropped image
+            st.image(cropped_img, caption="Cropped Image", use_container_width=True)
 
-        # Download cropped image
-        buffer = BytesIO()
-        cropped_img.save(buffer, format="JPEG")
-        buffer.seek(0)
-        st.download_button(
-            label="Download Cropped Image",
-            data=buffer,
-            file_name="cropped_image.jpeg",
-            mime=f"image/{extension}"
-        )
+            # Download cropped image
+            buffer = BytesIO()
+            cropped_img.save(buffer, format="JPEG")
+            buffer.seek(0)
+            st.download_button(
+                label="Download Cropped Image",
+                data=buffer,
+                file_name="cropped_image.jpeg",
+                mime=f"image/{extension}"
+            )
