@@ -170,41 +170,38 @@ elif option== '✨ Enhance Image':
 
 elif option=='✂️ Crop Image':
 
-
     st.title("📐 Interactive Image Cropper")
     st.write("Upload your image, then drag and select the part you want to keep.")
     st.info("💡 Tip: You can freely adjust the crop box or maintain an aspect ratio if needed.")
 
     st.markdown("---")  # Horizontal line
-    file=st.file_uploader("Select your image:",type=['jpg','jpeg','png','bmp','tiff', 'tif'])
-    if file:
-        filename=file.name
-        extension=os.path.splitext(filename)[1].lower()
-    
 
-    with st.container(border=True):
-        if file:
-            img = Image.open(file)
-            
-            # Interactive cropper
-            st.write("Drag and select the part of the image you want to keep.")
+    # Upload image
+    file = st.file_uploader("Select your image:", type=['jpg','jpeg','png','bmp','tiff', 'tif'])
+    if file:
+        filename = file.name
+        extension = os.path.splitext(filename)[1].lower()
+        img = Image.open(file)
+
+        # Cropper inside expander for better mobile experience
+        with st.expander("Crop your image here ⬇️", expanded=True):
             cropped_img = st_cropper(
                 img,
                 realtime_update=True,   # updates crop in real-time
                 box_color='blue',       # crop box color
-                aspect_ratio=None       # None means free selection
-            )
+                aspect_ratio=None  
+            )         
 
-            # Show cropped image
-            st.image(cropped_img, caption="Cropped Image", use_container_width=True)
+        # Show cropped image
+        st.image(cropped_img, caption="Cropped Image", use_column_width=True)
 
-            # Download cropped image
-            buffer = BytesIO()
-            cropped_img.save(buffer, format="JPEG")
-            buffer.seek(0)
-            st.download_button(
-                label="Download Cropped Image",
-                data=buffer,
-                file_name="cropped_image.jpeg",
-                mime=f"image/{extension}"
-            )
+        # Download button
+        buffer = BytesIO()
+        cropped_img.save(buffer, format="JPEG")
+        buffer.seek(0)
+        st.download_button(
+            label="Download Cropped Image",
+            data=buffer,
+            file_name="cropped_image.jpeg",
+            mime=f"image/{extension}"
+        )
