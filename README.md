@@ -1,49 +1,67 @@
+# 🖼️ Image Tools App
 
-# 🖼️ Image Enhancer App  
-
-A simple and interactive **Streamlit web application** that lets you upload, resize, and enhance images with ease.  
-
----
-
-## ✨ What this app does
-- 📤 Upload an image (`.jpg`, `.jpeg`)  
-- 📏 Resize to custom width and height  
-- 🔧 Enhance using:
-  - Sharpening  
-  - Brightness adjustment  
-  - Contrast improvement  
-- 🖥️ View **Original vs Enhanced** side by side  
-- 💾 Download the enhanced image in `.jpeg` format  
+✨ **Your one-stop solution for resizing, enhancing, and cropping images effortlessly!** ✨
 
 ---
 
-## 🚀 Features
-- Easy-to-use **Streamlit interface**  
-- High-quality resizing with **LANCZOS filter**  
-- Built-in **image enhancement controls**  
-- Side-by-side comparison for better visualization  
-- One-click **download button**  
+## Overview
+
+This Streamlit-based app allows users to:
+
+- **Resize images** to exact dimensions in **cm**.
+- **Enhance images** with brightness, contrast, and sharpness adjustments in one click.
+- **Crop images interactively**, choosing exactly which part to keep.
+
+The app supports multiple image formats including JPG, JPEG, PNG, BMP, and TIFF.
 
 ---
 
-## 🔄 Workflow
-1. Upload an image  
-2. Enter custom **width and height**  
-3. Click **Show Image**  
-4. Instantly compare **Original vs Enhanced**  
-5. Download your processed image  
+## Features
+
+### 🏠 Home
+- Welcome page with app overview and tips.
+- Information about supported formats and usage hints.
+
+### 📏 Resize Image
+- Upload your image and enter desired **width** and **height in cm**.
+- The app converts these dimensions to pixels automatically.
+- Preview original and resized images side by side.
+- Download resized image.
+
+### ✨ Enhance Image
+- Upload your image and click **Enhance Image**.
+- The app automatically:
+  - Increases sharpness
+  - Improves brightness
+  - Boosts contrast
+- Preview original vs enhanced image.
+- Download enhanced image.
+
+### ✂️ Crop Image
+- Upload your image.
+- Drag and select the part of the image you want to keep.
+- Adjust crop box freely or set an aspect ratio.
+- Preview cropped image.
+- Download cropped image.
 
 ---
 
-## 📸 Example Preview  
+## Supported Image Formats
 
-| Original Image | Enhanced Image |
-|----------------|----------------|
-| ![original](docs/original.jpg) | ![enhanced](docs/enhanced.jpg) |
+- JPG
+- JPEG
+- PNG
+- BMP
+- TIFF / TIF
+
+---
+
+## Built With
+
+- [Streamlit](https://streamlit.io/) – Python framework for interactive apps  
+- [Pillow](https://pillow.readthedocs.io/en/stable/) – Image processing library  
+- [streamlit-cropper](https://github.com/amay077/streamlit-cropper) – Interactive image cropping  
 
 ---
 
-## 📜 License  
-Licensed under the **MIT License**.  
-
----
+💡 **Tip:** This app works perfectly on both **desktop** and **mobile** devices, making image editing easy on the go!
