@@ -185,20 +185,29 @@ elif option=='✂️ Crop Image':
 
         # Cropper inside expander for better mobile experience
         with st.expander("Crop your image here ⬇️", expanded=True):
+            st.write("📌 Drag the box to select the area. Pinch to zoom on mobile.")
+            img_resized = img.copy()
+            img_resized.thumbnail((425,425))  # keeps aspect ratio, max 800x800
+
             cropped_img = st_cropper(
-                img,
-                realtime_update=True,   # updates crop in real-time
-                box_color='blue',       # crop box color
-                aspect_ratio=None  
-            )         
+                img_resized,
+                realtime_update=True,
+                box_color='blue',
+                aspect_ratio=None
+            )
+    
+            enhancer = ImageEnhance.Sharpness(cropped_img)
 
-        # Show cropped image
-        st.image(cropped_img, caption="Cropped Image", use_column_width=True)
+            # Increase sharpness (2.0 = sharper, 1.0 = original, 0.0 = blurry)
+            sharpened_img = enhancer.enhance(3.0)
 
-        # Download button
-        buffer = BytesIO()
-        cropped_img.save(buffer, format="JPEG")
-        buffer.seek(0)
+            st.image(sharpened_img, caption="Cropped Image", use_container_width=True)
+
+            # Download button
+            buffer = BytesIO()
+            sharpened_img.save(buffer, format="JPEG")
+            buffer.seek(0)
+
         st.download_button(
             label="Download Cropped Image",
             data=buffer,
